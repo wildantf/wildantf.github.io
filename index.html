@@ -9,11 +9,14 @@
 		<link rel="icon" href="icon.png">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.js"
 			integrity="sha512-brrjTp9G6MkKX5QjXwwAQkscfFpKi3okjyZ/M3vGwwg9qI1msoz7z+EbQBLXsTnVK3POjYBGHcQvX34GFKr/7A=="
 			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
+			integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 		<!-- Font Awesome if you need it
@@ -136,76 +139,30 @@
 					Portfolio Project
 				</h1>
 
-				<div class="flex flex-wrap mx-auto md:justify-evenly">
-					<div class="flex flex-col items-center justify-center max-w-sm w-full p-2 lg:w-1/3 md:w-1/2">
-						<div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
-							style="background-image: url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)">
-						</div>
+				<div class="flex flex-wrap mx-auto md:justify-evenly" x-data="{portfolios : portfoliosData}">
+					<template x-for="portfolio in portfolios" :key="portfolio.id">
+						<div class="flex flex-col items-center justify-center max-w-sm w-full p-2 lg:w-1/3 md:w-1/2">
+							<div x-text="portfolio.id" class="hidden"></div>
+							<div class="hidden img-url" x-text="portfolio.img_url"></div>
+							<div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md img-show">
+							
+							</div>
 
-						<div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-							<h3
-								class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
-								BLOG Relawan TIK</h3>
+							<div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+								<h3 x-text="portfolio.title"
+									class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
+								</h3>
 
-							<div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-								<span class="font-bold text-gray-800 dark:text-gray-200">$129</span>
-								<button
-									class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Visit</button>
+								<div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
+									<!-- <span class="font-bold text-gray-800 dark:text-gray-200">$129</span> -->
+									<div class="hidden technology-data" x-text="portfolio.technology"></div>
+									<img src="" alt="" class="technology w-5 h-5">
+									<button
+										class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Visit</button>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="flex flex-col items-center justify-center max-w-sm w-full p-2 lg:w-1/3 md:w-1/2">
-						<div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
-							style="background-image: url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)">
-						</div>
-
-						<div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-56 dark:bg-gray-800">
-							<h3
-								class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
-								Nike Revolt</h3>
-
-							<div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-								<span class="font-bold text-gray-800 dark:text-gray-200">$129</span>
-								<button
-									class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add
-									to cart</button>
-							</div>
-						</div>
-					</div>
-					<div class="flex flex-col items-center justify-center max-w-sm w-full p-2 lg:w-1/3 md:w-1/2">
-						<div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
-							style="background-image: url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)">
-						</div>
-
-						<div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-56 dark:bg-gray-800">
-							<h3
-								class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
-								BLOG Relawan TIK</h3>
-
-							<div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-								<span class="font-bold text-gray-800 dark:text-gray-200">$129</span>
-								<button
-									class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Visit</button>
-							</div>
-						</div>
-					</div>
-					<div class="flex flex-col items-center justify-center max-w-sm w-full p-2 lg:w-1/3 md:w-1/2">
-						<div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
-							style="background-image: url(https://images.unsplash.com/photo-1521903062400-b80f2cb8cb9d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80)">
-						</div>
-
-						<div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-56 dark:bg-gray-800">
-							<h3
-								class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
-								BLOG Relawan TIK</h3>
-
-							<div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-								<span class="font-bold text-gray-800 dark:text-gray-200">$129</span>
-								<button
-									class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Visit</button>
-							</div>
-						</div>
-					</div>
+					</template>
 				</div>
 			</div>
 
@@ -283,7 +240,35 @@
 
 		<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
 		<script src="https://unpkg.com/tippy.js@4"></script>
+
 		<script>
+			let portfoliosData = [
+				{
+					id: 1,
+					title: 'Blog RTIK Bangkalan',
+					img_url: 'Wildan.jpg',
+					technology :'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg'
+				},
+				{
+					id: 2,
+					title: 'Twitter Clone',
+					img_url: 'icon.png',
+					technology :'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg'
+				},
+			];
+			
+			// Merubah foto portfolio dengan dinamis
+			$(document).ready(function () {
+				$('.img-url').each(function(index){
+					// console.log($(this).text())
+					$(".img-show:eq(" +index+ ")").css('background-image', 'url(' + $(this).text() + ')')
+					$(".technology:eq(" +index+ ")").attr('src',$('.technology-data:eq('+index+')').text())
+				});
+			});
+
+		</script>
+		<script>
+
 			//Init tooltips
 			tippy('.link', {
 				placement: 'bottom'
@@ -329,6 +314,7 @@
 
 					event.preventDefault();
 				})
+
 			});
 
 		</script>
