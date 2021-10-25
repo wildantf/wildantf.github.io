@@ -14,10 +14,6 @@
 			integrity="sha512-brrjTp9G6MkKX5QjXwwAQkscfFpKi3okjyZ/M3vGwwg9qI1msoz7z+EbQBLXsTnVK3POjYBGHcQvX34GFKr/7A=="
 			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
-			integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
-			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 
 		<!-- Font Awesome if you need it
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
@@ -25,24 +21,30 @@
 		<link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
 		<!--Replace with your tailwind.css once created-->
 
+		<script>
+			if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				document.documentElement.classList.add('dark')
+			} else {
+				document.documentElement.classList.remove('dark')
+			}
+		</script>
+
 	</head>
 
-	<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover "
-		style="background-image:url('https://source.unsplash.com/1L71sPT5XKc');">
+	<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover ">
 
 
 		<div class="max-w-4xl flex items-center h-auto flex-wrap mx-auto my-32 md:my-20">
 			<!--Main Col-->
 			<div
-				class="card w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+				class="card w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white dark:bg-gray-800 opacity-75 mx-6 lg:mx-0">
 
-
-				<div class="p-4 md:p-12 text-center lg:text-left">
+				<div class="p-4 md:p-12 text-center lg:text-left dark:text-gray-100">
 					<!-- Image for mobile view-->
 					<div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
 						style="background-image: url('Wildan.jpg')"></div>
 
-					<h1 class="text-3xl font-bold pt-8 lg:pt-0">Wildan Tamma Faza Chair</h1>
+					<h1 class="text-3xl font-bold pt-8 lg:pt-0 ">Wildan Tamma Faza Chair</h1>
 					<div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
 					<p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start"><svg
 							class="h-4 fill-current text-green-700 pr-4" xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +52,8 @@
 							<path
 								d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
 						</svg> Web Developer & Computer Science</p>
-					<p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
+					<p
+						class="pt-2 text-gray-600 dark:text-gray-300 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
 						<svg class="h-4 fill-current text-green-700 pr-4" xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 20 20">
 							<path
@@ -70,25 +73,26 @@
 						</a>
 					</div>
 
-					<div class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-center">
+					<div
+						class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-center text-gray-600 dark:text-gray-200">
 						<a class="link" href="https://www.facebook.com/wildan.rezpect"
 							data-tippy-content="Wildan Tamma Faza"><svg
-								class="px-4 h-6 fill-current text-gray-600 hover:text-green-700" role="img"
-								viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								class="px-4 h-6 fill-current hover:text-green-700" role="img" viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg">
 								<title>Facebook</title>
 								<path
 									d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0" />
 							</svg></a>
 						<a class="link" href="https://twitter.com/wildantammafcb_"
 							data-tippy-content="@wildantammafcb_"><svg
-								class="px-2 md:px-4 h-6 fill-current text-gray-600 hover:text-green-700" role="img"
+								class="px-2 md:px-4 h-6 fill-current hover:text-green-700" role="img"
 								viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<title>Twitter</title>
 								<path
 									d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z" />
 							</svg></a>
 						<a class="link" href="https://github.com/wildantf/" data-tippy-content="@wildantf"><svg
-								class="px-2 md:px-4 h-6 fill-current text-gray-600 hover:text-green-700" role="img"
+								class="px-2 md:px-4 h-6 fill-current hover:text-green-700" role="img"
 								viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<title>GitHub</title>
 								<path
@@ -96,7 +100,7 @@
 							</svg></a>
 						<a class="link" href="https://id.linkedin.com/in/wildan-tamma-faza-chair-445a24124"
 							data-tippy-content="Wildan Tamma Faza Chair"><svg xmlns="http://www.w3.org/2000/svg"
-								class="px-2 md:px-4 h-6 fill-current text-gray-600 hover:text-green-700" role="imh"
+								class="px-2 md:px-4 h-6 fill-current hover:text-green-700" role="imh"
 								viewBox="0 0 24 24">
 								<title>Linkedin</title>
 								<path
@@ -105,7 +109,7 @@
 
 						<a class="link" href="https://www.instagram.com/wildantammafaza/"
 							data-tippy-content="@wildantammafaza"><svg
-								class="px-2 md:px-4 h-6 fill-current text-gray-600 hover:text-green-700" role="img"
+								class="px-2 md:px-4 h-6 fill-current hover:text-green-700" role="img"
 								viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<title>Instagram</title>
 								<path
@@ -130,75 +134,88 @@
 
 			<!-- Pin to top right corner -->
 			<div class="absolute top-0 right-0 h-12 w-18 p-4">
-				<button class="js-change-theme focus:outline-none">🌙</button>
+				<div class="focus:outline-none cursor-pointer" id="theme-toggle"></div>
 			</div>
 
 			<!-- Portfolio -->
-			<div class="mt-3 card w-full lg:w-full rounded-lg shadow-2xl bg-white opacity-75 mx-6 lg:mx-0 lg:p-10 p-5">
-				<h1 class="font-bold text-2xl text-center mb-4">
-					Portfolio Project
+			<div
+				class="mt-3 card w-full lg:w-full rounded-lg shadow-2xl bg-white dark:bg-gray-800 opacity-75 mx-6 lg:mx-0 lg:p-10 p-5">
+				<h1 class="font-bold text-2xl text-center mb-4 dark:text-gray-100">
+					PROJECT PORTFOLIO
 				</h1>
 
-				<div class="flex flex-wrap mx-auto md:justify-evenly" x-data="{portfolios : portfoliosData}">
-					<template x-for="portfolio in portfolios" :key="portfolio.id">
-						<div class="flex flex-col items-center justify-center max-w-sm w-full p-2 lg:w-1/3 md:w-1/2">
-							<div class="hidden img-url" x-text="portfolio.img_url"></div>
-							<div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md img-show">
-				
-							</div>
+				<div class="flex flex-wrap mx-auto md:justify-around" id="app">
 
-							<div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-								<h3 x-text="portfolio.title"
-									class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
-								</h3>
+					<div v-for="(portfolio) in portfolios" :key="portfolio.id"
+						class="flex flex-col items-center justify-center w-full lg:w-1/3 md:w-1/2 py-2 px-1">
+						<img v-bind="{src : portfolio.imgUrl}"
+							class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md">
 
-								<div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-									<!-- <span class="font-bold text-gray-800 dark:text-gray-200">$129</span> -->
-									<div class="hidden technology-data" x-text="portfolio.technology"></div>
-									<img src="" alt="" class="technology w-5 h-5">
-									<div class="url-data hidden" x-text="portfolio.url"></div>
-									<a href=""
-										class="url px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Visit</a>
+						<div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+							<h3
+								class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
+								{{ portfolio.title }}
+							</h3>
+
+							<div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
+								<div v-if="Array.isArray(portfolio.technology)">
+									<div v-for="tech in portfolio.technology" class="inline-flex mx-0.5">
+										<img v-bind="{src : tech }" alt="" class=" w-5 h-5 ">
+									</div>
 								</div>
+								<div v-else>
+									<img v-bind="{src : portfolio.technology }" alt="" class="w-5 h-5">
+								</div>
+
+								<a v-bind="{href : portfolio.url}"
+									class="url px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Visit</a>
 							</div>
 						</div>
-					</template>
+					</div>
+
 				</div>
+
+				<!-- </template> -->
+				<!-- </div> -->
 			</div>
 
 
 			<!-- Contact -->
-			<div class="mt-3 card w-full lg:w-full rounded-lg shadow-2xl bg-white opacity-75 mx-6 lg:mx-0 lg:p-10 p-5"
+			<div class="mt-3 card w-full lg:w-full rounded-lg shadow-2xl bg-white opacity-75 mx-6 lg:mx-0 lg:p-10 p-5 dark:bg-gray-800 dark:text-gray-100"
 				id="getInTouch">
 				<div class="flex flex-col text-center">
 					<h1 class="font-bold text-2xl">
 						Get in touch
 					</h1>
-					<h6 class="text-gray-600 py-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. </h6>
+					<h6 class="text-gray-600 dark:text-gray-300 py-4">Lorem ipsum, dolor sit amet consectetur
+						adipisicing elit. </h6>
 				</div>
 				<div class="flex flex-col lg:flex-row text-center justify-evenly">
-					<a href="#" class="hover:bg-gray-200 py-5 px-4 rounded-lg">
-						<svg class="w-5 h-5 flex w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-							fill="currentColor">
+					<a href="#" class="hover:bg-gray-200 dark:hover:bg-gray-600 py-5 px-4 rounded-lg">
+						<svg class="w-5 h-5 w-full justify-center" xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20" fill="currentColor">
 							<path fill-rule="evenodd"
 								d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
 								clip-rule="evenodd" />
 						</svg>
-						Bangkalan, Jawa Timur</a>
-					<a href="#" class="hover:bg-gray-200 py-5 px-2 rounded-lg truncate">
-						<svg class="w-5 h-5 flex w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-							fill="currentColor">
+						<span>Bangkalan, Jawa Timur</span></a>
+					<a href="#" class="hover:bg-gray-200 dark:hover:bg-gray-600 py-5 px-2 rounded-lg truncate">
+						<svg class="w-5 h-5  w-full justify-center" xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20" fill="currentColor">
 							<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
 							<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
 						</svg>
 						<span class="text-xs md:text-base">wildantammafazachair877@gmail.com</span> </a>
-					<a href="#" class="hover:bg-gray-200 py-5 px-2 rounded-lg">
-						<svg class="w-5 h-5 flex w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-							fill="currentColor">
+					<a href="#" class="hover:bg-gray-200 dark:hover:bg-gray-600 py-5 px-2 rounded-lg">
+						<svg class="w-5 h-5  w-full justify-center" xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 20 20" fill="currentColor">
 							<path
 								d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
 						</svg>
-						+6283852590682</a>
+						<span>
+							+6283852590682
+						</span>
+					</a>
 				</div>
 				<div class="flex-col">
 					<div class="flex flex-col md:flex-row w-full">
@@ -225,7 +242,7 @@
 					</div>
 					<div class="flex flex-wrap justify-center mt-2">
 						<button
-							class="rounded-lg px-3 py-2 bg-gray-300 hover:bg-gray-500 focus:ring-1 hover:text-gray-100 focus:ring-blue-400 focus:transition">
+							class="rounded-lg px-3 py-2 bg-gray-300 hover:bg-gray-500 focus:ring-1 hover:text-gray-100 focus:ring-blue-400 focus:transition dark:bg-gray-600">
 							Send message
 						</button>
 					</div>
@@ -234,88 +251,30 @@
 			<!-- batas -->
 		</div>
 
+		<script src="https://unpkg.com/vue@next"></script>
+		<script src="data.js"></script>
 
 		<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
 		<script src="https://unpkg.com/tippy.js@4"></script>
 
-		<script>
-			let portfoliosData = [
-				{
-					id: 1,
-					title: 'Blog RTIK Bangkalan',
-					img_url: 'web%20rtik%20portfolio.png',
-					technology :'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
-					url : 'https://rtik-bangkalan.herokuapp.com/',
-				},
-				{
-					id: 2,
-					title: 'Twitter Clone',
-					img_url: 'https://dummyimage.com/400x400/b5b5b5/ffffff&text=Image+not+found',
-					technology :'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
-					url: '/',
-				},
-			];
-			
-			// Merubah foto portfolio dengan dinamis
-			$(document).ready(function () {
-				$('.img-url').each(function(index){
-					// console.log($(this).text())
-					$(".img-show:eq(" +index+ ")").css('background-image', 'url(' + $(this).text() + ')')
-					$(".technology:eq(" +index+ ")").attr('src',$('.technology-data:eq('+index+')').text())
-					$(".url:eq(" +index+ ")").attr('href',$('.url-data:eq('+index+')').text())
-				});
-			});
+		<!-- TAILWIND2  -->
+		<script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+		<script type="tailwind-config">
+			{	
+				darkMode: 'class',
+			}
+			</script>
+		<!-- END TAILWIND2 -->
 
-		</script>
+		<!-- Toggle Theme -->
+		<script src="config.js"></script>
+		<!-- End Toggle Theme -->
 		<script>
-
 			//Init tooltips
 			tippy('.link', {
 				placement: 'bottom'
 			})
-
-			//Toggle mode
-			const toggle = document.querySelector('.js-change-theme');
-			const body = document.querySelector('body');
-			const cards = document.querySelectorAll('.card');
-
-
-			toggle.addEventListener('click', () => {
-
-				if (body.classList.contains('text-gray-900')) {
-					toggle.innerHTML = "☀️";
-					body.classList.remove('text-gray-900');
-					body.classList.add('text-gray-100');
-					for (i = 0; i < cards.length; i++) {
-						cards[i].classList.remove('bg-white');
-						cards[i].classList.add('bg-gray-900');
-					}
-				} else {
-					toggle.innerHTML = "🌙";
-					body.classList.remove('text-gray-100');
-					body.classList.add('text-gray-900');
-					for (i = 0; i < cards.length; i++) {
-						cards[i].classList.remove('bg-gray-900');
-						cards[i].classList.add('bg-white');
-					}
-
-				}
-			});
-
-			$(document).ready(function () {
-				$('#getInTouch').on('click', function () {
-					var tujuan = $(this).attr('href');
-					// tangkap elemen ybs
-					var elemenTujuan = $(tujuan);
-
-					$('html,body').animate({
-						scrollTop: elemenTujuan.offset().top - 50
-					}, 1250, 'easeInOutBack');
-
-					event.preventDefault();
-				})
-
-			});
+			
 
 		</script>
 
