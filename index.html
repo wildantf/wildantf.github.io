@@ -15,19 +15,13 @@
 			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-		<!-- Font Awesome if you need it
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-  -->
+
 		<link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
 		<!--Replace with your tailwind.css once created-->
 
-		<script>
-			if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-				document.documentElement.classList.add('dark')
-			} else {
-				document.documentElement.classList.remove('dark')
-			}
-		</script>
+		<!-- Toggle Theme -->
+		<script src="theme.js"></script>
+		<!-- End Toggle Theme -->
 
 	</head>
 
@@ -37,7 +31,7 @@
 		<div class="max-w-4xl flex items-center h-auto flex-wrap mx-auto my-32 md:my-20">
 			<!--Main Col-->
 			<div
-				class="card w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white dark:bg-gray-800 opacity-75 mx-6 lg:mx-0">
+				class="card w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white/80 dark:bg-gray-800/80 mx-6 lg:mx-0">
 
 				<div class="p-4 md:p-12 text-center lg:text-left dark:text-gray-100">
 					<!-- Image for mobile view-->
@@ -139,7 +133,7 @@
 
 			<!-- Portfolio -->
 			<div
-				class="mt-3 card w-full lg:w-full rounded-lg shadow-2xl bg-white dark:bg-gray-800 opacity-75 mx-6 lg:mx-0 lg:p-10 p-5">
+				class="mt-3 card w-full lg:w-full rounded-lg shadow-2xl bg-white/80 dark:bg-gray-800/80 bg mx-6 lg:mx-0 lg:p-10 p-5">
 				<h1 class="font-bold text-2xl text-center mb-4 dark:text-gray-100">
 					PROJECT PORTFOLIO
 				</h1>
@@ -151,7 +145,7 @@
 						<img v-bind="{src : portfolio.imgUrl}"
 							class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md">
 
-						<div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+						<div class="w-56 -mt-10 overflow-hidden bg-white/80 rounded-lg shadow-lg dark:bg-gray-800/80">
 							<h3
 								class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
 								{{ portfolio.title }}
@@ -181,7 +175,7 @@
 
 
 			<!-- Contact -->
-			<div class="mt-3 card w-full lg:w-full rounded-lg shadow-2xl bg-white opacity-75 mx-6 lg:mx-0 lg:p-10 p-5 dark:bg-gray-800 dark:text-gray-100"
+			<div class="mt-3 card w-full lg:w-full rounded-lg shadow-2xl bg-white/80 bg mx-6 lg:mx-0 lg:p-10 p-5 dark:bg-gray-800/80 dark:text-gray-100"
 				id="getInTouch">
 				<div class="flex flex-col text-center">
 					<h1 class="font-bold text-2xl">
@@ -222,13 +216,13 @@
 						<label for="name" class="flex-1 md:pr-1 text-sm">
 							Name
 							<input
-								class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+								class="block w-full px-4 py-2 text-gray-700 bg-white/80 border border-gray-300 rounded-md dark:bg-gray-800/80 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
 								type="text" name="name">
 						</label>
 						<label for="email" class="flex-1 md:pl-1 text-sm">
 							Email
 							<input
-								class="block w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+								class="block w-full px-4 py-2 text-gray-700 bg-white/80 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
 								type="email" name="email">
 						</label>
 					</div>
@@ -236,7 +230,7 @@
 						<label for="message" class="flex-1 text-sm">
 							Message
 							<textarea
-								class=" h-40 w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+								class=" h-40 w-full px-4 py-2 text-gray-700 bg-white/80 border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
 								name="message"></textarea>
 						</label>
 					</div>
@@ -266,15 +260,13 @@
 			</script>
 		<!-- END TAILWIND2 -->
 
-		<!-- Toggle Theme -->
-		<script src="config.js"></script>
-		<!-- End Toggle Theme -->
+
 		<script>
 			//Init tooltips
 			tippy('.link', {
 				placement: 'bottom'
 			})
-			
+
 
 		</script>
 
