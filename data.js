@@ -6,26 +6,33 @@ const app = Vue.createApp({
                     id: 0,
                     title: 'Blog RTIK Bangkalan',
                     imgUrl: 'web%20rtik%20portfolio.png',
-                    technology: [
-                        'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
-                        'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg'
-                    ],
-                    url: 'https://rtik-bangkalan.herokuapp.com/'
+                    technology: {
+                        Laravel8: 'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
+                        Tailwind2: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg',
+                        alpinejs: 'https://cdn.worldvectorlogo.com/logos/alpinejs.svg',
+                        jquery: 'https://www.vectorlogo.zone/logos/jquery/jquery-icon.svg',
+                    },
+                    url: 'https://rtik-bangkalan.herokuapp.com/',
                 },
                 {
                     id: 1,
-                    title: 'Twitter Clone',
-                    imgUrl: 'web%20rtik%20portfolio.png',
-                    technology: 'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
-                    url: '/',
+                    title: 'Tugas KASIR PINTAR',
+                    imgUrl: 'tugas%20kasir%20pintar.png',
+                    technology: {
+                        laravel: 'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
+                        'firebase firestore': 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg', 
+                    },
+                    url: 'https://github.com/wildantf/gudang',
                 },
-                {
-                    id: 2,
-                    title: 'Twitter Clone',
-                    imgUrl: 'Wildan.jpg',
-                    technology: 'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
-                    url: '/',
-                }
+                // {
+                //     id: 2,
+                //     title: 'Twitter Clone',
+                //     imgUrl: 'Wildan.jpg',
+                //     technology: {
+                //         laravel: 'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
+                //     },
+                //     url: '/',
+                // }
             ]
         }
     }

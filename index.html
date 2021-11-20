@@ -94,7 +94,7 @@
 							</svg></a>
 						<a class="link" href="https://id.linkedin.com/in/wildan-tamma-faza-chair-445a24124"
 							data-tippy-content="Wildan Tamma Faza Chair"><svg xmlns="http://www.w3.org/2000/svg"
-								class="px-2 md:px-4 h-6 fill-current hover:text-green-700" role="imh"
+								class="px-2 md:px-4 h-6 fill-current hover:text-green-700" role="img"
 								viewBox="0 0 24 24">
 								<title>Linkedin</title>
 								<path
@@ -152,13 +152,10 @@
 							</h3>
 
 							<div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
-								<div v-if="Array.isArray(portfolio.technology)">
-									<div v-for="tech in portfolio.technology" class="inline-flex mx-0.5">
-										<img v-bind="{src : tech }" alt="" class=" w-5 h-5 ">
+								<div v-if="!(portfolio.technology).length">
+									<div v-for="(value, name, index) in portfolio.technology" class="inline-flex mx-0.5">
+										<img v-bind="{src : value }" alt="" class=" w-5 h-5 techtip" v-bind:data-tippy-content="name" >
 									</div>
-								</div>
-								<div v-else>
-									<img v-bind="{src : portfolio.technology }" alt="" class="w-5 h-5">
 								</div>
 
 								<a v-bind="{href : portfolio.url}"
@@ -265,7 +262,10 @@
 			//Init tooltips
 			tippy('.link', {
 				placement: 'bottom'
-			})
+			});
+			tippy('.techtip', {
+				placement: 'bottom'
+			});
 
 
 		</script>
