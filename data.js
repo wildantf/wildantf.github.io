@@ -13,6 +13,7 @@ const app = Vue.createApp({
                         jquery: 'https://www.vectorlogo.zone/logos/jquery/jquery-icon.svg',
                     },
                     url: 'https://rtik-bangkalan.herokuapp.com/',
+                    github: 'https://github.com/wildantf/rtik-bangkalan',
                 },
                 {
                     id: 1,
@@ -20,9 +21,11 @@ const app = Vue.createApp({
                     imgUrl: 'gudangku.png',
                     technology: {
                         laravel: 'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
-                        'firebase firestore': 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg', 
+                        'firebase firestore': 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg',
+                        'docker' : 'https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png' 
                     },
-                    url: 'https://github.com/wildantf/gudang',
+                    url: '',
+                    github: 'https://github.com/wildantf/gudang',
                 },
                 // {
                 //     id: 2,
