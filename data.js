@@ -16,8 +16,8 @@ const app = Vue.createApp({
                 },
                 {
                     id: 1,
-                    title: 'Tugas KASIR PINTAR',
-                    imgUrl: 'tugas%20kasir%20pintar.png',
+                    title: 'Gudang Sederhana',
+                    imgUrl: 'gudangku.png',
                     technology: {
                         laravel: 'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg',
                         'firebase firestore': 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg', 
