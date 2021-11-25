@@ -24,7 +24,7 @@ const app = Vue.createApp({
                         'firebase firestore': 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg',
                         'docker' : 'https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png' 
                     },
-                    url: '',
+                    // url: '',
                     github: 'https://github.com/wildantf/gudang',
                 },
                 // {
